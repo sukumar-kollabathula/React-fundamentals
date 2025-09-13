@@ -1,11 +1,12 @@
-function Productcard({product,price,isAvailable}) {
+import "./Productcard.css"
+function Productcard(product) {
 
   return (
-    <div>
-        <p>Product:{product}</p>
-        <p>Price:{price}</p>
-        <p>isAvailable:{isAvailable===true?"available":"not available"}</p>
-
+    <div className="container">
+        <p className="title" >Productname:{product.productname}</p>
+        <p className="price">Price:{product.price}</p>
+        {product.isAvailable ?<p className="stock">"available"</p>:<p className="instock">"not available"</p>}
+       
     </div>
   )
 }

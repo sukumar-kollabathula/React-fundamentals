@@ -1,0 +1,13 @@
+.hi{
+    border:20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding:50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    border-width: 5px;
+}
+.photo{
+    size: 10px;
+}

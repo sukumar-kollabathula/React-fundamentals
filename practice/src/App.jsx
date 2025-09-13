@@ -1,14 +1,15 @@
-import Productcard from './Productcard.jsx'
+import "./App.css"
+import ID from "./id"
 function App() {
-
-  const productName ="Soap"
-  const cost = 40
-  const Available = true
-
+const name= "sukumar"
+const rollnumber= "23VV1A0522"
+const course="BTECH"
+const Bloodgroup= "0+"
+const DOB= "13-10-2005"
   return (
-  <>
-    <Productcard product={productName} price={cost} isAvailable={Available}/>
-  </>
+    <div className="container"> 
+      <ID name={name} rollnumber={rollnumber} course={course} Bloodgroup={Bloodgroup} DOB={DOB}/>
+    </div>
 
 )
 }
