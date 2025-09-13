@@ -1,17 +1,50 @@
-import "./App.css"
-import ID from "./id"
-function App() {
-const name= "sukumar"
-const rollnumber= "23VV1A0522"
-const course="BTECH"
-const Bloodgroup= "0+"
-const DOB= "13-10-2005"
-  return (
-    <div className="container"> 
-      <ID name={name} rollnumber={rollnumber} course={course} Bloodgroup={Bloodgroup} DOB={DOB}/>
-    </div>
 
+import { useState } from "react"
+import ButtonClick from "./ButtonClick"
+function App() {
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const [count,setCount] =useState(0)
+  const handleIncrement=()=>{
+    setCount((prev)=>prev+1)
+    
+  }
+  const handleEmailChange=(event)=>{
+    setEmail(event.target.value)
+  }
+  const handlePasswordChange=(event)=>{
+    setPassword(event.target.value)
+  }  
+  function handleClick(name){
+    console.log("button clicked",name)
+    console.log(name);
+  } 
+  const handleSubmit=(event)=>{
+    alert(`email:${email} password:${password}`)
+    event.preventDefault()
+    console.log(email);
+    console.log(password);
+  }
+  const handleChange =(event)=>{
+    console.log(event.target.value)
+     console.log(event.target.name)
+  }
+
+  
+
+   return(
+  <div>
+    {<form onSubmit={handleSubmit}>
+      <input type="email" placeholder="email" value={email} onChange={handleEmailChange}/>
+      <input type="password" placeholder="password" value={password} onChange={handlePasswordChange}/>
+      <button type="submit">Submit</button>
+    </form>}
+    <p>Count:{count}</p>
+    <button onClick={handleIncrement}>Increment</button>
+    
+  </div>
 )
+
 }
 
-export default App
+export default App      
